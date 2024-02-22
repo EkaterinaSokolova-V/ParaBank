@@ -1,11 +1,8 @@
 package pageobjects;
 
 import framework.BaseClass;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class OverviewPage extends BaseClass {
     @FindBy(css="p[class='smallText'] b")
@@ -15,7 +12,12 @@ public class OverviewPage extends BaseClass {
 
     public String getWelcomeText() {
 
-        return getWait10().until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector("p[class='smallText'] b")))).getText();
+        return welcomeText.getText();
+    }
+
+    public HomePage clickHomePageIcon() {
+        homePageIcon.click();
+        return new HomePage();
     }
 
 }

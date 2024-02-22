@@ -1,13 +1,11 @@
 package pageobjects;
 
-import framework.BaseTest;
-import org.openqa.selenium.By;
+import framework.BaseClass;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LoginPage extends BaseTest {
-//    By enterUserNameField = By.xpath("//input[@name='username']");
+public class LoginPage extends BaseClass {
+
     @FindBy(xpath="//input[@name='username']")
     private WebElement usernameField;
 
@@ -18,17 +16,17 @@ public class LoginPage extends BaseTest {
     private WebElement loginButton;
 
     public LoginPage enterUsername(String username) {
-        getWait10().until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@name='username']")))).sendKeys(username);
+        usernameField.sendKeys(username);
         return this;
     }
 
     public LoginPage enterPassword(String password) {
-        getWait10().until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@name='password']")))).sendKeys(password);
+        passwordField.sendKeys(password);
         return this;
     }
 
     public OverviewPage clickLoginButton() {
-        getWait10().until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@value='Log In']")))).click();
+        loginButton.click();
         return new OverviewPage();
     }
 }

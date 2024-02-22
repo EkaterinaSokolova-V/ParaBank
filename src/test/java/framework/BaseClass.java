@@ -4,6 +4,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class BaseClass extends BaseTest{
+
     @BeforeMethod
     public void beforeMethod() {
         initialization();
@@ -11,7 +12,7 @@ public class BaseClass extends BaseTest{
 
     @AfterMethod
     public void afterMethod() {
-        driver.close();
-        driver.quit();
+        getDriver().close();
+        getDriver().quit();
     }
 }
