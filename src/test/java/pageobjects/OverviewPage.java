@@ -9,6 +9,8 @@ public class OverviewPage extends BaseClass {
     private WebElement welcomeText;
     @FindBy(xpath="//li/a[text() = 'home']")
     private WebElement homePageIcon;
+    @FindBy(xpath = "//li/a[text() = 'about']")
+    private WebElement aboutIcon;
 
     public String getWelcomeText() {
 
@@ -18,6 +20,11 @@ public class OverviewPage extends BaseClass {
     public HomePage clickHomePageIcon() {
         homePageIcon.click();
         return new HomePage();
+    }
+
+    public AboutPage clickAboutIcon() {
+        aboutIcon.click();
+        return new AboutPage();
     }
 
 }
