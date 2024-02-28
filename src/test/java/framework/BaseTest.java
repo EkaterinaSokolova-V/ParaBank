@@ -17,8 +17,6 @@ import java.util.Properties;
 public class BaseTest {
     private static WebDriver driver;
     private static Properties prop;
-    private static String PROP_USERNAME;
-    private static String PROP_PASSWORD;
 
     public BaseTest() {
         PageFactory.initElements(driver, this);
@@ -44,14 +42,13 @@ public class BaseTest {
     }
 
     public static void login() {
-        driver.findElement(By.xpath("//input[@name='username']")).sendKeys(PROP_USERNAME);
-        driver.findElement(By.xpath("//input[@name='password']")).sendKeys(PROP_PASSWORD);
+        driver.findElement(By.xpath("//input[@name='username']")).sendKeys(prop.getProperty("username"));
+        driver.findElement(By.xpath("//input[@name='password']")).sendKeys(prop.getProperty("password"));
         driver.findElement(By.xpath("//input[@value='Log In']")).click();
+        System.out.println("login method");
     }
 
     public static void initialization() {
-        PROP_USERNAME = prop.getProperty("username");
-        PROP_PASSWORD = prop.getProperty("password");
         String browserName = prop.getProperty("browser");
         if (browserName.equals("chrome")) {
             WebDriverManager.chromedriver().setup();
