@@ -1,4 +1,4 @@
-package Tests;
+package tests;
 
 import framework.BaseClass;
 import org.testng.Assert;
@@ -9,6 +9,7 @@ import pageobjects.OverviewPage;
 public class LoginTest extends BaseClass {
     private static final String VALID_USERNAME = "john";
     private static final String VALID_PASSWORD = "demo";
+    private static final String LOGIN_ERROR_MESSAGE = "Please enter a username and password.";
 
     @Test
     public void loginCorrectCredentialsTest() {
@@ -28,7 +29,7 @@ public class LoginTest extends BaseClass {
                 .clickLoginButton(new LoginPage())
                 .getErrorMessageText();
 
-        Assert.assertEquals(errorMessage, "Please enter a username and password.");
+        Assert.assertEquals(errorMessage, LOGIN_ERROR_MESSAGE);
     }
 
     @Test
@@ -38,6 +39,6 @@ public class LoginTest extends BaseClass {
                 .clickLoginButton(new LoginPage())
                 .getErrorMessageText();
 
-        Assert.assertEquals(errorMessage, "Please enter a username and password.");
+        Assert.assertEquals(errorMessage, LOGIN_ERROR_MESSAGE);
     }
 }

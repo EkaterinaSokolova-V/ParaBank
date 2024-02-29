@@ -1,4 +1,4 @@
-package Tests;
+package tests;
 
 import framework.BaseLoginClass;
 import org.testng.Assert;
