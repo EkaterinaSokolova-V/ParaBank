@@ -7,7 +7,6 @@ import org.testng.annotations.BeforeMethod;
 import com.relevantcodes.extentreports.ExtentReports;
 
 public class BaseClass extends BaseTest{
-
     @BeforeClass
     public void beforeClass() {
         report = new ExtentReports(System.getProperty("user.dir") + "/reports/" + "Report_" + getCurrentTimeStamp() + ".html");

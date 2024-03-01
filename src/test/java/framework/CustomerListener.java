@@ -3,7 +3,6 @@ package framework;
 import com.relevantcodes.extentreports.LogStatus;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
 import java.io.IOException;
 
 public class CustomerListener extends BaseTest implements ITestListener {
