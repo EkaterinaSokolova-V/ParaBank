@@ -27,4 +27,15 @@ public class HeaderPanelTest extends BaseLoginClass {
 
         Assert.assertEquals(ABOUT_HEADER, mainAboutPageHeader);
     }
+
+    @Test
+    public void aboutIconURLTest() {
+        String aboutUrlExpected = "https://parabank.parasoft.com/parabank/about.htm";
+
+        String aboutPageUrlActual = new OverviewPage()
+                .clickAboutIcon()
+                .getUrl();
+
+        Assert.assertEquals(aboutPageUrlActual, aboutUrlExpected);
+    }
 }

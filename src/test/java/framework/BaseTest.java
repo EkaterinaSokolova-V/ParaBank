@@ -45,7 +45,6 @@ public class BaseTest {
         driver.findElement(By.xpath("//input[@name='username']")).sendKeys(prop.getProperty("username"));
         driver.findElement(By.xpath("//input[@name='password']")).sendKeys(prop.getProperty("password"));
         driver.findElement(By.xpath("//input[@value='Log In']")).click();
-        System.out.println("login method");
     }
 
     public static void initialization() {
@@ -55,7 +54,6 @@ public class BaseTest {
             ChromeOptions chromeOptions = new ChromeOptions();
             driver = new ChromeDriver(chromeOptions);
             driver.get(prop.getProperty("url"));
-//            driver.get("https://parabank.parasoft.com/parabank/index.htm");
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
             System.out.println(driver.getTitle());

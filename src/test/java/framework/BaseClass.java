@@ -14,5 +14,6 @@ public class BaseClass extends BaseTest{
     public void afterMethod() {
         getDriver().close();
         getDriver().quit();
+        System.out.println("Driver close and quit");
     }
 }
