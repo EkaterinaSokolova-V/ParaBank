@@ -12,9 +12,4 @@ public class AboutPage extends BaseClass {
 
         return mainHeader.getText();
     }
-
-    public  String getUrl() {
-
-        return getDriver().getCurrentUrl();
-    }
 }

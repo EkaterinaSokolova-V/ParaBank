@@ -4,6 +4,7 @@ import framework.BaseLoginClass;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageobjects.OverviewPage;
+import utils.TestUtils;
 
 public class HeaderPanelTest extends BaseLoginClass {
     private static final String ATM_SERVICES = "ATM Services";
@@ -32,9 +33,9 @@ public class HeaderPanelTest extends BaseLoginClass {
     public void aboutIconURLTest() {
         String aboutUrlExpected = "https://parabank.parasoft.com/parabank/about.htm";
 
-        String aboutPageUrlActual = new OverviewPage()
-                .clickAboutIcon()
-                .getUrl();
+        new OverviewPage()
+                .clickAboutIcon();
+        String aboutPageUrlActual = TestUtils.getUrl();
 
         Assert.assertEquals(aboutPageUrlActual, aboutUrlExpected);
     }
