@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="RegressionSuite">
+
+<!--    <parameter name="validUsername" value="john"/>-->
+<!--    <parameter name="validPassword" value="demo"/>-->
+<!--    <parameter name="validUsername" value="john1"/>-->
+<!--    <parameter name="validPassword" value="demo1"/>-->
+    <test name="LoginRegressionTests">
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="RegressionTests">
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.HeaderPanelTest"/>
+        </classes>
+    </test>
+</suite>

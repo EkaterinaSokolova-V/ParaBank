@@ -1,11 +1,14 @@
 package tests;
 
 import framework.BaseClass;
+import framework.CustomerListener;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageobjects.LoginPage;
 import pageobjects.OverviewPage;
 
+@Listeners(CustomerListener.class)
 public class LoginTest extends BaseClass {
     private static final String VALID_USERNAME = "john";
     private static final String VALID_PASSWORD = "demo";
